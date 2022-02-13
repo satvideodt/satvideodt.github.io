@@ -358,3 +358,30 @@ div.paper i.fas {
     font-size: 13px;
   }
 }
+
+#recruit {
+  width: 50%;
+  border-collapse: collapse; /*合并两个单元格之间的外边*/
+  text-align: center;
+}
+
+#recruit td,
+#recruit th {
+  border: 1px solid rgb(133, 129, 121); /*设置表格线为橘黄色*/
+  padding: 7px; /*设置内边距为7px*/
+  text-align: center;
+}
+
+#recruit th {
+  background-color: rgb(133, 129, 121); /*设置背景色*/
+  color: #ffffff; /*设置字体颜色*/
+}
+
+#recruit tr.orange {
+  background-color: rgb(240, 240, 234); /*给每行设置背景颜色*/
+}
+#caption2 {
+  text-align: center;
+  color: #080000;
+  /* display: block; */
+}
