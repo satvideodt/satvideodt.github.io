@@ -203,7 +203,7 @@
               robust moving object detection and tracking in satellite videos,
               due to the lack of high-quality and well-annotated public datasets
               and comprehensive benchmarks for performance evaluation. To this
-              end, we plan to organize a challenge based on the recent  <a href="https://github.com/QingyongHu/VISO" target="_blank"
+              end, we plan to organize a challenge based on the recent  <a href="https://github.com/The-Learning-And-Vision-Atelier-LAVA/VISO" target="_blank"
               >VISO</a
             >
               dataset, and focus on the specific challenges and research
@@ -213,30 +213,7 @@
               ultimately drive technological advancement in emerging
               applications.
             </p>
-            <!-- <p>
-              Over the past years, remarkable advances in techniques for 3D
-              point cloud understanding have greatly boosted performance.
-              Although these approaches achieve impressive results for object
-              recognition and semantic segmentation, almost all of them are
-              limited to extremely small 3D point clouds, and are difficult to
-              be directly extended to large-scale point clouds.
-              <font color="red"
-                ><b
-                  ><a href="http://live.bilibili.com/23697730" target="_blank"
-                    >[Bilibili Live]</a
-                  ></b
-                ></font
-              >
-              <font color="red"
-                ><b
-                  ><a
-                    href="https://www.youtube.com/watch?v=egBFjbQH8CE"
-                    target="_blank"
-                    >[YouTube Live]</a
-                  ></b
-                ></font
-              >
-            </p> -->
+       
           </div>
         </div>
         <p><br /></p>
@@ -271,7 +248,7 @@
               <div class="row">
                 <div class="col-xs-12">
                   <p>
-                    Given the  <a href="https://github.com/QingyongHu/VISO" target="_blank"
+                    Given the  <a href="https://github.com/The-Learning-And-Vision-Atelier-LAVA/VISO" target="_blank"
                     >VISO</a
                   >
                     dataset with 100 satellite videos (with
@@ -337,10 +314,10 @@
           <div class="col-xs-12">
             <p>
             This challenge is built upon our recently released             
-            <a href="https://github.com/QingyongHu/VISO" target="_blank"
+            <a href="https://github.com/The-Learning-And-Vision-Atelier-LAVA/VISO target="_blank"
               >VISO</a
             >
-            dataset , the first well-annotated large-scale satellite videos
+            dataset, the first well-annotated large-scale satellite videos
             dataset for the task of moving object detection and tracking.
             The dataset is captured by the Jilin-1 satellite constellation at
             different positions of the satellite orbit. The recorded videos
@@ -350,6 +327,70 @@
             Moreover, four common types of moving objects, including
             plane, car, ship and train, are manually labeled. 
             </p>
+         
+
+            <div class="row">
+              <div class="col-xs-12">
+                <a class="anchor" id="Track1"></a>
+                <h3>Training Set:</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <p>
+                  <b>Track 1: Moving object detection in satellite videos.</b> We cropped the original video size from 12000 *5000 to 512*512 (80 videos) as a training set for the challenge. Both video frames and interest objects with the bounding box will be released. The participants can use these images and bounding box as groundtruths to train their models. Note that, external dataset (e.g., validation/test sets of the VISO dataset) is NOT allowed in this challenge.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <p>
+                  <b>Track 2: Single object tracking in satellite videos.</b> For single object tracking, we only provide the label of the first frame in the training dataset for initialization. The participants can use these videos and the label of the first frame as groundtruths to train their models.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <p>
+                  <b>Track 3: Multiple-object tracking in satellite videos.</b> For multi-object tracking, an individual instance at different frames always has the same identity. The participants can use these videos and the label of the each object of interest  as groundtruths to train their models.
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <a class="anchor" id="Track1"></a>
+                <h3>Validation Set: </h3>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <p>
+                  The 10 satellite videos are used as the validation set of this challenge. Similar to the training set, both video frames and groundtruth in the validation set are provided. The participants can download the validation set to evaluate the performance of their developed models by comparing their results with the groundtruth.
+                </p>
+                <p>
+                Note that, The participants are encouraged to write papers to describe their methods and use the released validation set for performance evaluation.
+              </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <a class="anchor" id="Track1"></a>
+                <h3>Test Set: </h3>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <p>
+                  To rank the submitted models, a test set consisting of 10 satellite videos will be provided. Different from the training and validation sets, only video frames will be released. The participants are required to apply their models to the released satellite videos and submit their detection and tracking results to the server. It should be noted that the video frames in the test set cannot be used for training.
+                </p>
+              </div>
+            </div>
+
             <div class="divcss5">
             <video class="vimeo-embed" id="video" width="512" height="512" src="https://satvideodt.github.io/2022/img/demo.mp4" controls autoplay> 
             </video>
@@ -378,7 +419,7 @@
           <div class="row">
             <div class="col-xs-12">
               <p>
-                To evaluate the detection performance of the methods submitted to the challenge, the commonly-used evaluation metrics (i.e., Precision, Recall, and F1 scores) for object detection will be used.
+                To evaluate the detection performance of the methods submitted to the challenge, the commonly-used evaluation metrics (i.e., mAP) for object detection will be used. We report the average results over all the satellite videos in the evaluation dataset. Note that, the final results are ranked by mAP (IOU = 0.5) calculated in the test dataset.
               </p>
             </div>
           </div>
@@ -392,7 +433,7 @@
           <div class="row">
             <div class="col-xs-12">
               <p>
-                Following the standard evaluation protocol of the visual tracking OTB dataset, all trackers will be evaluated using two metrics: Distance Precision Rate (DPR) and Overlap Success Rate (OSR).
+                Following the standard evaluation protocol of the visual tracking OTB dataset, all trackers will be evaluated using two metrics: Distance Precision Rate (DPR) and Overlap Success Rate (OSR). Note that, the final results are ranked according to the AUC values of Distance Precision Rate (DPR) and Overlap Success Rate (OSR) calculated by the participants in the test dataset with a ratio of 50% and 50% respectively.
               </p>
             </div>
           </div>
@@ -407,14 +448,15 @@
           <div class="row">
             <div class="col-xs-12">
               <p>
-                The metrics in generic Multiple-Object Tracking Challenge Benchmark will be used for quantitative evaluation.These metrics fall into three categories:
+                The metrics in generic Multiple-Object Tracking Challenge Benchmark will be used for quantitative evaluation. The final results of multi-objective tracking will be ranked according to the Multiple Object Tracking Accuracy (MOTA) and IDF1 values calculated by participants in the test data set with a comprehensive weighting of 50% and 50% respectively.
+                <!-- The metrics in generic Multiple-Object Tracking Challenge Benchmark will be used for quantitative evaluation.These metrics fall into three categories:
                 <ul>
                     <li>Accuracy. Including Multiple Object Tracking Accuracy (MOTA), ID switches (IDs), IDF1 Score, ID Precision (IDP), ID Recall (IDR). This category measures the performance of the Multiple-object tracker.
                     </li>
                     <li>Precision. Including Multiple Object Tracking Precision (MOTP), Recall, Precision, the total number of false positives (FP), and the total number of false negatives (FN). This category measures the performance of the detection part, mainly representing the accuracy of the detection boundingbox compared with the ground truth.
                     </li>
                     <li>Completeness. Including Mostly tracked objects (MT), Mostly lost objects (ML), and Fragmentation (FM). This category measures the completeness of the entire tracking trajectory.</li>
-                </ul>
+                </ul> -->
 
               </p>
             </div>
@@ -431,8 +473,10 @@
         <div class="row">
           <div class="col-xs-12">
             <p>
-              The 3D world around us is composed of a rich variety of objects:
-              <i> buildings, bridges, trees, cars, rivers,</i> and so forth,
+              Over the last few years, several milestone methods have been developed for satellite videos, including DSFNet and CFME. In this challenge, DSFNet is used as a detection baseline model and the submitted results should be at least on par with DSFNet. CFME is used as a single object tracking baseline model and the submitted results should be at least on par with CFME. In particular, we selected SORT as a multi object tracking baseline model.
+    Note that, the inputs (i.e., detection results at each frame) to the baselines is used the detection
+results achieved by DSFNet method. The solutions with evaluation metrics values lower than these baselines will not be ranked in the leaderboard.
+
             </p>
          
           </div>
