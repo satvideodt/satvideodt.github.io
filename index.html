@@ -373,74 +373,13 @@
             image in the videos has a resolution of 12,000 &times 5,000 and
             contains a great number of objects with different scales.
             Moreover, four common types of moving objects, including
-            plane, car, ship and train, are manually labeled. 
+            plane, car, ship and train, are manually labeled. An example of a labeled video is shown below:
             </p>
-         
-
-            <div class="row">
-              <div class="col-xs-12">
-                <a class="anchor" id="Track1"></a>
-                <h3>Training Set:</h3>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <p>
-                  <b>Track 1: Moving object detection in satellite videos.</b> We cropped the original video size from 12000 *5000 to 512*512 (80 videos) as a training set for the challenge. Both video frames and interest objects with the bounding box will be released. The participants can use these images and bounding box as groundtruths to train their models. Note that, external dataset (e.g., validation/test sets of the VISO dataset) is NOT allowed in this challenge.
-                </p>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-12">
-                <p>
-                  <b>Track 2: Single object tracking in satellite videos.</b> For single object tracking, we only provide the label of the first frame in the training dataset for initialization. The participants can use these videos and the label of the first frame as groundtruths to train their models.
-                </p>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-12">
-                <p>
-                  <b>Track 3: Multiple-object tracking in satellite videos.</b> For multi-object tracking, an individual instance at different frames always has the same identity. The participants can use these videos and the label of the each object of interest  as groundtruths to train their models.
-                </p>
-              </div>
-            </div>
             <div class="divcss5">
-              <video class="vimeo-embed" id="video" width=50% src="https://satvideodt.github.io/2022/img/demo.mp4" controls autoplay> 
+              <video class="vimeo-embed" id="video" width=60% src="https://satvideodt.github.io/2022/img/demo.mp4" controls autoplay> 
               </video>
               </div> 
-            <div class="row">
-              <div class="col-xs-12">
-                <a class="anchor" id="Track1"></a>
-                <h3>Validation Set: </h3>
-              </div>
-            </div>
 
-            <div class="row">
-              <div class="col-xs-12">
-                <p>
-                  The 10 satellite videos are used as the validation set of this challenge. Similar to the training set, both video frames and groundtruth in the validation set are provided. The participants can download the validation set to evaluate the performance of their developed models by comparing their results with the groundtruth.
-                </p>
-                <p>
-                Note that, The participants are encouraged to write papers to describe their methods and use the released validation set for performance evaluation.
-              </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <a class="anchor" id="Track1"></a>
-                <h3>Test Set: </h3>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-12">
-                <p>
-                  To rank the submitted models, a test set consisting of 10 satellite videos will be provided. Different from the training and validation sets, only video frames will be released. The participants are required to apply their models to the released satellite videos and submit their detection and tracking results to the server. It should be noted that the video frames in the test set cannot be used for training.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
         <p><br /></p>
@@ -512,7 +451,7 @@
             <div class="divcss5">
             <table id="recruit">
               <caption id="caption2"> Moving object detection </caption>
-              <tr><th>Method</th><th>mAP (IOU = 0.5)</th><th>Score</th></tr>
+              <tr><th>Method</th><th>mAP(IOU=0.5)</th><th>Score</th></tr>
               <tr><td>DSFNet</td><td>0.200</td><td>20.0</td></tr>
           </table>
 
